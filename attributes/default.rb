@@ -33,5 +33,9 @@ default[:cassandra] = {
   :seeds            => [],
   :concurrent_reads => 32,
   :concurrent_writes => 32,
-  :snitch           => 'SimpleSnitch'
+  :snitch           => 'SimpleSnitch',
+  :key_cache_size_in_mb => '',
+  :row_cache_size_in_rb => 0,
+  :rpc_server_type => 'sync'
+
 }
