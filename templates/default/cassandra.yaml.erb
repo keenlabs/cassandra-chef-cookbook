@@ -291,7 +291,7 @@ concurrent_writes: <%= node[:cassandra][:concurrent_writes] %>
 # while blocked. If you have a large heap and many data directories,
 # you can increase this value for better flush performance.
 # By default this will be set to the amount of data directories defined.
-#memtable_flush_writers: 1
+memtable_flush_writers: <%= node[:cassandra][:memtable_flush_writers] %>
 
 # the number of full memtables to allow pending flush, that is,
 # waiting for a writer thread.  At a minimum, this should be set to
@@ -466,7 +466,7 @@ in_memory_compaction_limit_in_mb: 64
 # This is usually only useful for SSD-based hardware: otherwise, 
 # your concern is usually to get compaction to do LESS i/o (see:
 # compaction_throughput_mb_per_sec), not more.
-multithreaded_compaction: false
+multithreaded_compaction: <%= node[:cassandra][:multithreaded_compaction] %>
 
 # Throttles compaction to the given total throughput across the entire
 # system. The faster you insert data, the faster you need to compact in
@@ -474,7 +474,7 @@ multithreaded_compaction: false
 # 16 to 32 times the rate you are inserting data is more than sufficient.
 # Setting this to 0 disables throttling. Note that this account for all types
 # of compaction, including validation compaction.
-compaction_throughput_mb_per_sec: 16
+compaction_throughput_mb_per_sec: <%= node[:cassandra][:compaction_throughput_mb_per_sec] %>
 
 # Track cached row keys during compaction, and re-cache their new
 # positions in the compacted sstable.  Disable if you use really large

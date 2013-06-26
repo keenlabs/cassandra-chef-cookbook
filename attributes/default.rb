@@ -36,6 +36,8 @@ default[:cassandra] = {
   :snitch           => 'SimpleSnitch',
   :key_cache_size_in_mb => '',
   :row_cache_size_in_mb => 0,
-  :rpc_server_type => 'sync'
-
+  :rpc_server_type => 'sync',
+  :multithreaded_compaction => false,
+  :compaction_throughput_mb_per_sec => 16,
+  :memtable_flush_writers => 1
 }
