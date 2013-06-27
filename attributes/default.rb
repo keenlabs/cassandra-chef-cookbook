@@ -39,5 +39,6 @@ default[:cassandra] = {
   :rpc_server_type => 'sync',
   :multithreaded_compaction => false,
   :compaction_throughput_mb_per_sec => 16,
-  :memtable_flush_writers => 1
+  :memtable_flush_writers => 1,
+  :stream_throughput_outbound_megabits_per_sec => 400
 }
