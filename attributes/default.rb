@@ -41,5 +41,16 @@ default[:cassandra] = {
   :compaction_throughput_mb_per_sec => 16,
   :memtable_flush_writers => 1,
   :stream_throughput_outbound_megabits_per_sec => 400,
-  :authenticator => "AllowAllAuthenticator"
+  :authenticator => "AllowAllAuthenticator",
+  :topology => {
+    :default => {
+      :dc => "DC1",
+      :rack => "r1"
+    },
+    :servers => [{
+      :ip => "129.168.1.100",
+      :dc => "DC1",
+      :rack => "RAC1"
+    }]
+  }
 }
