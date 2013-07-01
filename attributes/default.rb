@@ -1,4 +1,4 @@
-cassandra_version = "1.2.4"
+cassandra_version = "1.2.3"
 
 default[:cassandra] = {
   :cluster_name => "Test Cluster",
