@@ -1,4 +1,4 @@
-cassandra_version = "1.2.3"
+cassandra_version = "1.2.4"
 
 default[:cassandra] = {
   :cluster_name => "Test Cluster",
@@ -40,5 +40,6 @@ default[:cassandra] = {
   :multithreaded_compaction => false,
   :compaction_throughput_mb_per_sec => 16,
   :memtable_flush_writers => 1,
-  :stream_throughput_outbound_megabits_per_sec => 400
+  :stream_throughput_outbound_megabits_per_sec => 400,
+  :authenticator => "AllowAllAuthenticator"
 }
