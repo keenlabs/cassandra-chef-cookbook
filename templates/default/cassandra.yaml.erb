@@ -410,11 +410,11 @@ rpc_server_type: <%= node[:cassandra][:rpc_server_type] %>
 # internode_recv_buff_size_in_bytes:
 
 # Frame size for thrift (maximum field length).
-thrift_framed_transport_size_in_mb: 15
+thrift_framed_transport_size_in_mb: <%= node[:cassandra][:thrift_framed_transport_size_in_mb] %>
 
 # The max length of a thrift message, including all fields and
 # internal thrift overhead.
-thrift_max_message_length_in_mb: 16
+thrift_max_message_length_in_mb: <%= node[:cassandra][:thrift_max_message_length_in_mb] %>
 
 # Set to true to have Cassandra create a hard link to each sstable
 # flushed or streamed locally in a backups/ subdirectory of the

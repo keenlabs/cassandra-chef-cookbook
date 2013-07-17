@@ -40,5 +40,7 @@ default[:cassandra] = {
   :multithreaded_compaction => false,
   :compaction_throughput_mb_per_sec => 16,
   :memtable_flush_writers => 1,
-  :stream_throughput_outbound_megabits_per_sec => 400
+  :stream_throughput_outbound_megabits_per_sec => 400,
+  :thrift_framed_transport_size_in_mb => 15,
+  :thrift_max_message_length_in_mb => 16
 }
