@@ -42,5 +42,17 @@ default[:cassandra] = {
   :memtable_flush_writers => 1,
   :stream_throughput_outbound_megabits_per_sec => 400,
   :thrift_framed_transport_size_in_mb => 15,
-  :thrift_max_message_length_in_mb => 16
+  :thrift_max_message_length_in_mb => 16,
+  :authenticator => "AllowAllAuthenticator",
+  :topology => {
+    :default => {
+      :dc => "DC1",
+      :rack => "r1"
+    },
+    :servers => [{
+      :ip => "129.168.1.100",
+      :dc => "DC1",
+      :rack => "RAC1"
+    }]
+  }
 }
