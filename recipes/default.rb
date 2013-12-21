@@ -6,6 +6,6 @@ include_recipe "cassandra::datastax"
     owner node["cassandra"]["user"]
     group node["cassandra"]["user"]
     mode  0644
-    notifies :restart, resources(:service => "cassandra")
+    # notifies :restart, resources(:service => "cassandra")
   end
 end
