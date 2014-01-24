@@ -26,6 +26,7 @@ default[:cassandra] = {
   :commitlog_dir    => "/var/lib/cassandra/",
   :log_dir          => "/var/log/cassandra/",
   :listen_address   => node[:ipaddress],
+  :broadcast_address => '',
   :rpc_address      => node[:ipaddress],
   :max_heap_size    => nil,
   :heap_new_size    => nil,
